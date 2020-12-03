@@ -61,25 +61,212 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Loginpage.cs">
+    <Compile Include="Classes\Activity.cs" />
+    <Compile Include="Classes\ClassData.cs" />
+    <Compile Include="Classes\Parent.cs" />
+    <Compile Include="Classes\Student.cs" />
+    <Compile Include="Forms\Activity\AddActivity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Loginpage.Designer.cs">
+    <Compile Include="Forms\Activity\AddActivity.Designer.cs">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Activity\AddStudentToActivity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Activity\AddStudentToActivity.Designer.cs">
+      <DependentUpon>AddStudentToActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMember.Designer.cs">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members.Designer.cs">
+      <DependentUpon>Members.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\AddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\AddClass.Designer.cs">
+      <DependentUpon>AddClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\ChangeClassPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\ChangeClassPrice.Designer.cs">
+      <DependentUpon>ChangeClassPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\ClassPrices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\ClassPrices.Designer.cs">
+      <DependentUpon>ClassPrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\EditActivityPrices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\EditActivityPrices.Designer.cs">
+      <DependentUpon>EditActivityPrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\EditService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\EditService.Designer.cs">
+      <DependentUpon>EditService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\ExtraCurPrices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\ExtraCurPrices.Designer.cs">
+      <DependentUpon>ExtraCurPrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\RemoveClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\RemoveClass.Designer.cs">
+      <DependentUpon>RemoveClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\RemoveService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\RemoveService.Designer.cs">
+      <DependentUpon>RemoveService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Prices\ServicePrices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prices\ServicePrices.Designer.cs">
+      <DependentUpon>ServicePrices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RemoveMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RemoveMember.Designer.cs">
+      <DependentUpon>RemoveMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\Classes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\Classes.Designer.cs">
+      <DependentUpon>Classes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Activity\DisplayExtraCur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Activity\DisplayExtraCur.Designer.cs">
+      <DependentUpon>DisplayExtraCur.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\General\Loginpage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\General\Loginpage.Designer.cs">
       <DependentUpon>Loginpage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\General\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\General\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Activity\userinput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Activity\userinput.Designer.cs">
+      <DependentUpon>userinput.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Loginpage.resx">
+    <Compile Include="Forms\Student\ShowParentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student\ShowParentList.Designer.cs">
+      <DependentUpon>ShowParentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Activity\ShowActivityClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Activity\ShowActivityClass.Designer.cs">
+      <DependentUpon>ShowActivityClass.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Activity\AddActivity.resx">
+      <DependentUpon>AddActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Activity\AddStudentToActivity.resx">
+      <DependentUpon>AddStudentToActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddMember.resx">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members.resx">
+      <DependentUpon>Members.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\AddClass.resx">
+      <DependentUpon>AddClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\ChangeClassPrice.resx">
+      <DependentUpon>ChangeClassPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\ClassPrices.resx">
+      <DependentUpon>ClassPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\EditActivityPrices.resx">
+      <DependentUpon>EditActivityPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\EditService.resx">
+      <DependentUpon>EditService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\ExtraCurPrices.resx">
+      <DependentUpon>ExtraCurPrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\RemoveClass.resx">
+      <DependentUpon>RemoveClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\RemoveService.resx">
+      <DependentUpon>RemoveService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prices\ServicePrices.resx">
+      <DependentUpon>ServicePrices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RemoveMember.resx">
+      <DependentUpon>RemoveMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student\Classes.resx">
+      <DependentUpon>Classes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Activity\DisplayExtraCur.resx">
+      <DependentUpon>DisplayExtraCur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\General\Loginpage.resx">
       <DependentUpon>Loginpage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\General\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Activity\userinput.resx">
+      <DependentUpon>userinput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +277,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\Student\ShowParentList.resx">
+      <DependentUpon>ShowParentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Activity\ShowActivityClass.resx">
+      <DependentUpon>ShowActivityClass.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,5 +308,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
