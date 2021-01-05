@@ -77,16 +77,52 @@
     <Compile Include="Forms\Activity\AddStudentToActivity.Designer.cs">
       <DependentUpon>AddStudentToActivity.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AddMember.cs">
+    <Compile Include="Forms\Finance\Confirm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AddMember.Designer.cs">
+    <Compile Include="Forms\Finance\Confirm.Designer.cs">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\InvoiceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\InvoiceList.Designer.cs">
+      <DependentUpon>InvoiceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\InvoicePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\InvoicePage.Designer.cs">
+      <DependentUpon>InvoicePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PaymentAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PaymentAmount.Designer.cs">
+      <DependentUpon>PaymentAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\PaymentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\PaymentPage.Designer.cs">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Finance\ShowInvoicesFromList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Finance\ShowInvoicesFromList.Designer.cs">
+      <DependentUpon>ShowInvoicesFromList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members\AddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members\AddMember.Designer.cs">
       <DependentUpon>AddMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Members.cs">
+    <Compile Include="Forms\Members\Members.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Members.Designer.cs">
+    <Compile Include="Forms\Members\Members.Designer.cs">
       <DependentUpon>Members.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Prices\AddClass.cs">
@@ -149,11 +185,17 @@
     <Compile Include="Forms\Prices\ServicePrices.Designer.cs">
       <DependentUpon>ServicePrices.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\RemoveMember.cs">
+    <Compile Include="Forms\Members\RemoveMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\RemoveMember.Designer.cs">
+    <Compile Include="Forms\Members\RemoveMember.Designer.cs">
       <DependentUpon>RemoveMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Members\selectclass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Members\selectclass.Designer.cs">
+      <DependentUpon>selectclass.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student\Classes.cs">
       <SubType>Form</SubType>
@@ -211,10 +253,28 @@
     <EmbeddedResource Include="Forms\Activity\AddStudentToActivity.resx">
       <DependentUpon>AddStudentToActivity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AddMember.resx">
+    <EmbeddedResource Include="Forms\Finance\Confirm.resx">
+      <DependentUpon>Confirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\InvoiceList.resx">
+      <DependentUpon>InvoiceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\InvoicePage.resx">
+      <DependentUpon>InvoicePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PaymentAmount.resx">
+      <DependentUpon>PaymentAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\PaymentPage.resx">
+      <DependentUpon>PaymentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Finance\ShowInvoicesFromList.resx">
+      <DependentUpon>ShowInvoicesFromList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members\AddMember.resx">
       <DependentUpon>AddMember.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Members.resx">
+    <EmbeddedResource Include="Forms\Members\Members.resx">
       <DependentUpon>Members.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Prices\AddClass.resx">
@@ -247,8 +307,11 @@
     <EmbeddedResource Include="Forms\Prices\ServicePrices.resx">
       <DependentUpon>ServicePrices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\RemoveMember.resx">
+    <EmbeddedResource Include="Forms\Members\RemoveMember.resx">
       <DependentUpon>RemoveMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Members\selectclass.resx">
+      <DependentUpon>selectclass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student\AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>

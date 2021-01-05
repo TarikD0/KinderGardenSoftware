@@ -16,7 +16,7 @@ namespace finaltry.Forms.Prices
         public ClassPrices()
         {
             InitializeComponent();
-            showdata();
+            showdata("");
         }
         public static string classname;
         public static string classprice;
@@ -27,12 +27,12 @@ namespace finaltry.Forms.Prices
             classprice = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[3].Value);
             ChangeClassPrice changeClassPrice = new ChangeClassPrice();
             changeClassPrice.ShowDialog();
-            showdata();
+            showdata("");
 
             
         }
 
-        public void showdata()
+        public void showdata(string filter)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query;
@@ -40,7 +40,7 @@ namespace finaltry.Forms.Prices
             SqlDataAdapter sda;
             DataTable table = new DataTable();
 
-            query = "SELECT * From ClassPriceTable";
+            query = "SELECT * From ClassPriceTable WHERE ClassName Like '%" + filter +"%'";
             command = new SqlCommand(query, connection);
             sda = new SqlDataAdapter(command);
             sda.Fill(table);
@@ -51,14 +51,19 @@ namespace finaltry.Forms.Prices
         {
             AddClass addClass = new AddClass();
             addClass.ShowDialog();
-            showdata();
+            showdata("");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             RemoveClass remove = new RemoveClass();
             remove.ShowDialog();
-            showdata();
+            showdata("");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showdata(textBox1.Text);
         }
     }
 }

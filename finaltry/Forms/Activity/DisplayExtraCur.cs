@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using finaltry.Forms;
 using System.CodeDom.Compiler;
+using finaltry.Forms.Student;
 
 namespace finaltry
 {
@@ -20,13 +21,23 @@ namespace finaltry
         SqlCommand command;
         SqlDataAdapter sda;
         DataTable table;
+        string seleclass;
         public DisplayExtraCur()
         {
+            selectclass selectclass = new selectclass();
+            selectclass.ShowDialog();
+            seleclass = selectclass.finalchoice;
+          
             InitializeComponent();
             srchData("");
+            Console.WriteLine(seleclass);
+            Console.WriteLine(selectclass.finalchoice);
         }
         public static DataTable DataTable = new DataTable();
         public static string ActivityName = "";
+        public static string classname;
+        public static string ActivityID;
+       
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
@@ -42,15 +53,14 @@ namespace finaltry
             else
             {
         
-                query = "SELECT StudentD FROM ActivityStudentList WHERE ActivityID = " + senderGrid.Rows[e.RowIndex].Cells[1].Value+"";
+                query = "SELECT StudentD FROM ActivityStudentList WHERE ActivityID = " + senderGrid.Rows[e.RowIndex].Cells[1].Value+" AND Class = '" +seleclass+"'";
                 command = new SqlCommand(query, connection);
                 sda = new SqlDataAdapter(command);
                 table = new DataTable();
                 sda.Fill(table);
                 
                 int i = 0;
-                if(table.Rows.Count != 0)
-                {
+              
                    ActivityName = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[2].Value);
                     foreach (var row in table.Rows)
                     {
@@ -62,14 +72,13 @@ namespace finaltry
                                         
                         i = i + 1;
                     }
+                classname = selectclass.finalchoice;
+                ActivityID = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[1].Value);
                     ShowActivityClass showActivityClass = new ShowActivityClass();
                     showActivityClass.ShowDialog();
                     srchData("");
-                }
-                else
-                {
-                    MessageBox.Show("There are currently no students registered to that Activity", "Result:", MessageBoxButtons.OK);
-                }
+                
+              
            
              
             }
@@ -77,11 +86,12 @@ namespace finaltry
         }
         public void srchData(string DataToSearch)
         {
-            query = "SELECT * From ActivitiesTable WHERE ActivityName Like '%" + DataToSearch + "%'";
+            query = "SELECT ExtraCurID, ActivityName, Price From ActivitiesTable WHERE Class ='"+ seleclass + "' AND ActivityName Like '%" + DataToSearch + "%'";
             command = new SqlCommand(query, connection);
             sda = new SqlDataAdapter(command);
             table = new DataTable();
             sda.Fill(table);
+           
             dataGridView1.DataSource = table;
         }
 
@@ -92,6 +102,7 @@ namespace finaltry
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             userinput userinput = new userinput();
             userinput.ShowDialog();
             if(userinput.userchoice == "" || userinput.userchoice == null)

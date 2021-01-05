@@ -16,11 +16,12 @@ namespace finaltry.Forms.Prices
         public ExtraCurPrices()
         {
             InitializeComponent();
-            showdata();
+            showdata("");
         }
         public static string activityid;
         public static string activityname;
         public static string activityprice;
+        public static string classname;
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,66 +31,86 @@ namespace finaltry.Forms.Prices
             activityid = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[1].Value);
             activityname = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[2].Value);
             activityprice = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[3].Value);
+            classname = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[4].Value);
+
+
+            Console.WriteLine(senderGrid.Rows[e.RowIndex].Cells[1].Value);
+            Console.WriteLine(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+            Console.WriteLine(senderGrid.Rows[e.RowIndex].Cells[3].Value);
+            Console.WriteLine(senderGrid.Rows[e.RowIndex].Cells[4].Value);
+
             EditActivityPrices editActivityPrices = new EditActivityPrices();
-            editActivityPrices.Show();
-            showdata();
+            editActivityPrices.ShowDialog();
+            showdata("");
 
 
         }
 
-        public void showdata()
+        public void showdata(string filter)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query;
             SqlCommand command;
             SqlDataAdapter sda;
             DataTable table = new DataTable();
+            if(filter == "")
+            {
+                query = "SELECT * From ActivitiesTable";
+                command = new SqlCommand(query, connection);
+                sda = new SqlDataAdapter(command);
+                sda.Fill(table);
+                dataGridView1.DataSource = table;
+            }
+            else
+            {
+                if(radioButton1.Checked)
+                {
+                    query = "SELECT * From ActivitiesTable WHERE ActivityName Like '%" + filter +"%'";
+                    command = new SqlCommand(query, connection);
+                    sda = new SqlDataAdapter(command);
+                    sda.Fill(table);
+                    dataGridView1.DataSource = table;
+                }
+                else if(radioButton2.Checked)
+                {
+                    query = "SELECT * From ActivitiesTable WHERE Class Like '%" + filter + "%'";
+                    command = new SqlCommand(query, connection);
+                    sda = new SqlDataAdapter(command);
+                    sda.Fill(table);
+                    dataGridView1.DataSource = table;
+                }
+                else
+                {
+                    query = "SELECT * From ActivitiesTable WHERE ActivityName Like '%" + filter + "%'";
+                    command = new SqlCommand(query, connection);
+                    sda = new SqlDataAdapter(command);
+                    sda.Fill(table);
+                    dataGridView1.DataSource = table;
 
-            query = "SELECT * From ActivitiesTable";
-            command = new SqlCommand(query, connection);
-            sda = new SqlDataAdapter(command);
-            sda.Fill(table);
-            dataGridView1.DataSource = table;
+                }
+                    
+                
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             AddActivity add = new AddActivity();
             add.ShowDialog();
-            showdata();
+            showdata("");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             userinput userinput = new userinput();
             userinput.ShowDialog();
-            showdata();
-            if (userinput.userchoice == "" || userinput.userchoice == null)
-            {
+            showdata("");
+         
+        }
 
-            }
-            else
-            {
-                SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-                string query;
-                SqlDataAdapter sda;
-                
-                connection.Open();
-                query = "DELETE From ActivitiesTable WHERE ExtraCurID = " + userinput.userchoice + "";
-
-                sda = new SqlDataAdapter(query, connection);
-                sda.SelectCommand.ExecuteNonQuery();
-                connection.Close();
-
-                connection.Open();
-                string query2 = "Delete From ActivityStudentList WHERE ActivityID = " + userinput.userchoice + "";
-                SqlCommand command2 = new SqlCommand(query2, connection);
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command2);
-                sqlDataAdapter.SelectCommand.ExecuteNonQuery();
-                connection.Close();
-
-            }
-            showdata();
+        private void button3_Click(object sender, EventArgs e)
+        {
+            showdata(textBox1.Text);
         }
     }
 }

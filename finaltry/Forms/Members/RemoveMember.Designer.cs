@@ -38,9 +38,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 51);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(17, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 17);
+            this.label2.Size = new System.Drawing.Size(220, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Member You Wish to Remove";
             // 
@@ -67,15 +68,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 34);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 17);
+            this.label1.Size = new System.Drawing.Size(222, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Enter The Member ID Of The ";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 91);
+            this.textBox1.Location = new System.Drawing.Point(96, 90);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(59, 22);
             this.textBox1.TabIndex = 10;
@@ -84,7 +86,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(251, 208);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using finaltry.Forms.Student;
 
 namespace finaltry
 {
@@ -19,149 +20,17 @@ namespace finaltry
         string StudentClass;
         bool Lunch;
         bool TakesBus;
-        bool Classvisited = false;
+        bool addbutton;
+        int prevclasprice = 0;
     
         DataGridViewButtonColumn EditButton = new DataGridViewButtonColumn();
         public AddStudent()
         {
             InitializeComponent();
-            getActivities();
+            TodayTextBox.Text = "Registration Day: "+ Convert.ToString(DateTime.Today).Substring(0,10);
+          
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            StudentClass = "Purple";
-
-
-            int price;
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            connection.Open();
-            string query = "SELECT ProductPrice FROM Prices WHERE ProductName = 'Purple'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            var abc = sda.SelectCommand.ExecuteScalar();
-            price = Convert.ToInt32(abc);
-            connection.Close();
-            if (!Classvisited)
-            {
-
-                if (MonthlyPlanTextBox.Text == "")
-                {
-                    MonthlyPlanTextBox.Text = Convert.ToString(price);
-                }
-                else
-                {
-                    int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                    MonthlyPlanTextBox.Text = Convert.ToString(price + temp);
-                }
-                Classvisited = true;
-            }
-            else
-            {
-                int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                MonthlyPlanTextBox.Text = Convert.ToString(temp - price);
-                Classvisited = false; 
-            }
-
-        }
-
-        private void greenRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            StudentClass = "Green";
-            int price;
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            connection.Open();
-            string query = "SELECT ProductPrice FROM Prices WHERE ProductName = 'Green'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            var abc = sda.SelectCommand.ExecuteScalar();
-            price = Convert.ToInt32(abc);
-            connection.Close();
-            if (!Classvisited)
-            {
-
-                if (MonthlyPlanTextBox.Text == "")
-                {
-                    MonthlyPlanTextBox.Text = Convert.ToString(price);
-                }
-                else
-                {
-                    int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                    MonthlyPlanTextBox.Text = Convert.ToString(price + temp);
-                }
-                Classvisited = true;
-            }
-            else
-            {
-                int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                MonthlyPlanTextBox.Text = Convert.ToString(temp - price);
-                Classvisited = false;
-            }
-        }
-
-        private void blueRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            StudentClass = "Blue";
-            int price;
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            connection.Open();
-            string query = "SELECT ProductPrice FROM Prices WHERE ProductName = 'Blue'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            var abc = sda.SelectCommand.ExecuteScalar();
-            price = Convert.ToInt32(abc);
-            connection.Close();
-            if (!Classvisited)
-            {
-
-                if (MonthlyPlanTextBox.Text == "")
-                {
-                    MonthlyPlanTextBox.Text = Convert.ToString(price);
-                }
-                else
-                {
-                    int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                    MonthlyPlanTextBox.Text = Convert.ToString(price + temp);
-                }
-                Classvisited = true;
-            }
-            else
-            {
-                int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                MonthlyPlanTextBox.Text = Convert.ToString(temp - price);
-                Classvisited = false;
-            }
-        }
-
-        private void preSchoolRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            StudentClass = "Pre-School";
-            int price;
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            connection.Open();
-            string query = "SELECT ProductPrice FROM Prices WHERE ProductName = 'Preschool'";
-            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            var abc = sda.SelectCommand.ExecuteScalar();
-            price = Convert.ToInt32(abc);
-            connection.Close();
-            if (!Classvisited)
-            {
-
-                if (MonthlyPlanTextBox.Text == "")
-                {
-                    MonthlyPlanTextBox.Text = Convert.ToString(price);
-                }
-                else
-                {
-                    int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                    MonthlyPlanTextBox.Text = Convert.ToString(price + temp);
-                }
-                Classvisited = true;
-            }
-            else
-            {
-                int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
-                MonthlyPlanTextBox.Text = Convert.ToString(temp - price);
-                Classvisited = false;
-            }
-        }
 
         private void lyesRadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -213,7 +82,7 @@ namespace finaltry
 
             if (byesRadioButton.Checked)
             {
-                Lunch = true;
+                TakesBus = true;
                 if (MonthlyPlanTextBox.Text == "")
                 {
                     MonthlyPlanTextBox.Text = price.ToString();
@@ -227,7 +96,7 @@ namespace finaltry
             }
             else
             {
-                Lunch = false;
+                TakesBus = false;
                 int temp = Convert.ToInt32(MonthlyPlanTextBox.Text);
                 MonthlyPlanTextBox.Text = Convert.ToString(temp - price);
             }
@@ -250,8 +119,6 @@ namespace finaltry
             {
                 isValidEmail = true;
             }
-
-
 
             String messege = "";
             if (StudentIDTextBox.Text.Trim().Length == 0)
@@ -283,10 +150,11 @@ namespace finaltry
             {
                 messege = messege + "Email is not Valid!";
             }
-            else if (!preSchoolRadioButton.Checked && !blueRadioButton.Checked && !greenRadioButton.Checked && !purpleRadioButton.Checked)
+            else if(textBox3.Text.Trim().Length == 0)
             {
-                messege = messege + "Complete Class Assignment Form!\n";
+                messege = messege + "Select a Class!";
             }
+            
             else if(!lnoRadioButton.Checked && !lyesRadioButton.Checked)
             {
                 messege = messege + "Complete Lunch Form!\n";
@@ -307,8 +175,8 @@ namespace finaltry
                 int count = activities.Count;
                 SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
                 connection.Open();
-                string query = "INSERT INTO StudentList (StudentID, StudentName, StudentParentName, ParentPhoneNumber, StudentClass, UsesBus , TakesLunch, ExtraCurActivitiesCount, MonthlyPrice, ParentEmail) VALUES ('" + StudentIDTextBox.Text + "','" + StudentNameTextBox.Text + "','" + ParentNameTextBox.Text + "','" + PhoneNumberTextBox.Text + "','" + StudentClass + "','" + TakesBus + "','" + Lunch + "','" + count + "','" + Convert.ToInt32(MonthlyPlanTextBox.Text) + "','" + EmailTextBox.Text + "')";
-
+                string query = "INSERT INTO StudentList (StudentID, StudentName,StudentSurname, StudentParentName, StudentParentSurname, ParentPhoneNumber, StudentClass, UsesBus , TakesLunch, ExtraCurActivitiesCount, MonthlyPrice, ParentEmail, Balance, RegDate) VALUES ('" + StudentIDTextBox.Text + "','" + StudentNameTextBox.Text + "','" + textBox1.Text + "','"+ ParentNameTextBox.Text + "','" + textBox2.Text +"','"+ PhoneNumberTextBox.Text + "','" + textBox3.Text + "','" + TakesBus + "','" + Lunch + "','" + count + "','" + Convert.ToInt32(MonthlyPlanTextBox.Text) + "','" + EmailTextBox.Text + "','"+Convert.ToInt32(MonthlyPlanTextBox.Text)+"', convert(date, '"+ Convert.ToString(DateTime.Today).Substring(0, 10) + "'))";
+             
                 SqlDataAdapter sda = new SqlDataAdapter(query, connection);
                 sda.SelectCommand.ExecuteNonQuery();
                 connection.Close();
@@ -320,9 +188,9 @@ namespace finaltry
 
                 MessageBox.Show(messege, "Error!", MessageBoxButtons.OK); ;
             }
-            checkid();
+            addactivities();
         }
-        public void checkid()
+        public void addactivities()
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
             
@@ -334,7 +202,7 @@ namespace finaltry
                 DataTable table = new DataTable();
                 sqlDataAdapter.Fill(table);
                 Console.WriteLine(table.Rows[0].ItemArray[0]);
-                string query4 = "INSERT INTO ActivityStudentList(StudentD, ActivityID) VALUES (" + StudentIDTextBox.Text + ","+table.Rows[0].ItemArray[0] +")";
+                string query4 = "INSERT INTO ActivityStudentList(StudentD, ActivityID, Class, StudentName, ActivityName) VALUES (" + StudentIDTextBox.Text + ","+table.Rows[0].ItemArray[0] +",'" +textBox3.Text+ "','" +StudentNameTextBox.Text+ "'," + a.getActivity+ ")";
                 SqlDataAdapter sqldataadapter2 = new SqlDataAdapter(query4, connection);
                 sqldataadapter2.SelectCommand.ExecuteNonQuery();
                 connection.Close();
@@ -357,33 +225,43 @@ namespace finaltry
                 MonthlyPlanTextBox.Text = Convert.ToString(finalprice);
             }
         }
-        public void getActivities()
+        public void getActivities(string a)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            string query = "SELECT ActivityName,Price From ActivitiesTable WHERE ActivityName Like '%" + "" + "%'";
+            string query = "SELECT ActivityName,Price From ActivitiesTable WHERE Class = '"+ a +"'";
             
             SqlCommand command = new SqlCommand(query, connection);
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             sda.Fill(table);
+           
             dataGridView1.DataSource = table;
-            
-            EditButton.Name = "Add";
-            EditButton.Text = "ADD";
-            EditButton.UseColumnTextForButtonValue = true;
-            this.dataGridView1.Columns.Add(EditButton);
+            if(addbutton)
+            {
+
+            }
+            else
+            {
+                EditButton.Name = "Add";
+                EditButton.Text = "ADD";
+                EditButton.UseColumnTextForButtonValue = true;
+                this.dataGridView1.Columns.Add(EditButton);
+                addbutton = true;
+            }
+          
             
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+          
             var senderGrid = (DataGridView)sender;
             bool contains = false;
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
             {
-       
+        
+                
 
-                Activity activity = new Activity("'"+senderGrid.Rows[e.RowIndex].Cells[1].Value+"'",Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[2].Value) );
+                Activity activity = new Activity("'"+senderGrid.Rows[e.RowIndex].Cells[0].Value+"'",Convert.ToInt32(senderGrid.Rows[e.RowIndex].Cells[1].Value) );
                 foreach(var Activity in activities)
                 {
                     if(Activity.getActivity == activity.getActivity)
@@ -463,8 +341,9 @@ namespace finaltry
             if(ShowParentList.parentdata2.Count != 0)
             {
                 ParentNameTextBox.Text = ShowParentList.parentdata2[0];
-                PhoneNumberTextBox.Text = ShowParentList.parentdata2[1];
-                EmailTextBox.Text = ShowParentList.parentdata2[2];
+                textBox2.Text = ShowParentList.parentdata2[1];
+                PhoneNumberTextBox.Text = ShowParentList.parentdata2[2];
+                EmailTextBox.Text = ShowParentList.parentdata2[3];
                 discountTextBox.Text = "5";
             }
             
@@ -486,6 +365,49 @@ namespace finaltry
                 this.Close();
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            selectclass selectclass = new selectclass();
+            selectclass.ShowDialog();
+            textBox3.Text = selectclass.finalchoice;
+            getActivities(textBox3.Text);
+            
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
+            string query = "SELECT ClassPrice From ClassPriceTable WHERE ClassName ='" + textBox3.Text + "'";
+            SqlCommand command = new SqlCommand(query, connection);
+            SqlDataAdapter sda = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            sda.Fill(table);
+            if(table.Rows.Count != 0)
+            {
+
+           
+            Console.WriteLine(table.Rows[0].ItemArray[0]);
+            if (MonthlyPlanTextBox.Text != "")
+            {
+                int maintemp = Convert.ToInt32(MonthlyPlanTextBox.Text);
+                maintemp = maintemp - prevclasprice;
+                maintemp = maintemp + Convert.ToInt32(table.Rows[0].ItemArray[0]);
+                prevclasprice = Convert.ToInt32(table.Rows[0].ItemArray[0]);
+                MonthlyPlanTextBox.Text = Convert.ToString(maintemp);
+            }
+            else
+            {
+                MonthlyPlanTextBox.Text = Convert.ToString(table.Rows[0].ItemArray[0]);
+                prevclasprice = Convert.ToInt32(table.Rows[0].ItemArray[0]);
+            }
+            }
+            else
+            {
+                MessageBox.Show("Choose a Valid Class!", "Error!", MessageBoxButtons.OK);
+            }
         }
     }
 }

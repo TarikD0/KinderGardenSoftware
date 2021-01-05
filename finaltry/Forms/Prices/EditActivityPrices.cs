@@ -12,10 +12,13 @@ namespace finaltry.Forms.Prices
 {
     public partial class EditActivityPrices : Form
     {
+        
         public EditActivityPrices()
         {
             InitializeComponent();
             ActivityNameBox.Text = ExtraCurPrices.activityname;
+            label1.Text = ExtraCurPrices.classname;
+        
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -25,14 +28,16 @@ namespace finaltry.Forms.Prices
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var activityID = ExtraCurPrices.activityid;
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query;
             SqlDataAdapter sda;
             connection.Open();
-            query = "UPDATE ActivitiesTable SET Price ='" +textBox3.Text+"'";
+            query = "UPDATE ActivitiesTable SET Price ='" +textBox3.Text+ "' WHERE ExtraCurID = "+ activityID + " AND Class = '"+label1.Text+"'";
             sda = new SqlDataAdapter(query, connection);
             sda.SelectCommand.ExecuteNonQuery();
             connection.Close();
+            this.Close();
         }
     }
 }

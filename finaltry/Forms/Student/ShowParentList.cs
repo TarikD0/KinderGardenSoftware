@@ -34,11 +34,11 @@ namespace finaltry
         {
             if (searchin == "")
             {
-                query = "SELECT StudentParentName, ParentPhoneNumber, ParentEmail From StudentList WHERE StudentParentName Like '%" + texttosearch + "%'";
+                query = "SELECT StudentParentName, StudentParentSurname, ParentPhoneNumber, ParentEmail From StudentList WHERE StudentParentName Like '%" + "" + "%'";
             }
             else
             {
-                query = "SELECT StudentParentName, ParentPhoneNumber, ParentEmail From StudentList WHERE "+searchin+ " Like '%" + texttosearch + "%'";
+                query = "SELECT StudentParentName, StudentParentSurname, ParentPhoneNumber, ParentEmail From StudentList WHERE "+searchin+ " Like '%" + texttosearch + "%'";
             }
             command = new SqlCommand(query, connection);
             sda = new SqlDataAdapter(command);
@@ -78,12 +78,16 @@ namespace finaltry
             var senderGrid = (DataGridView)sender;
 
             string name = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[1].Value);
-            string phone = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[2].Value);
-            string email = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[3].Value);
+            string surname = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[2].Value);
+            string phone = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[3].Value);
+            string email = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[4].Value);
+            
             parentdata2.Add(name);
+            parentdata2.Add(surname);
             parentdata2.Add(phone);
             parentdata2.Add(email);
             NameTextBox.Text = name;
+            textBox2.Text = surname;
             PhoneTextBox.Text = phone;
             EmailTextBox.Text = email;
         }

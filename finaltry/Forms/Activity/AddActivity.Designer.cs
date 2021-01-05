@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,14 +65,14 @@
             // 
             this.ActivityIDTextBox.Location = new System.Drawing.Point(139, 70);
             this.ActivityIDTextBox.Name = "ActivityIDTextBox";
-            this.ActivityIDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ActivityIDTextBox.Size = new System.Drawing.Size(236, 22);
             this.ActivityIDTextBox.TabIndex = 2;
             // 
             // ActivityNameTextBox
             // 
             this.ActivityNameTextBox.Location = new System.Drawing.Point(139, 110);
             this.ActivityNameTextBox.Name = "ActivityNameTextBox";
-            this.ActivityNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ActivityNameTextBox.Size = new System.Drawing.Size(236, 22);
             this.ActivityNameTextBox.TabIndex = 4;
             // 
             // label3
@@ -85,16 +87,16 @@
             // 
             // ActivityPriceTextBox
             // 
-            this.ActivityPriceTextBox.Location = new System.Drawing.Point(139, 144);
+            this.ActivityPriceTextBox.Location = new System.Drawing.Point(139, 149);
             this.ActivityPriceTextBox.Name = "ActivityPriceTextBox";
-            this.ActivityPriceTextBox.Size = new System.Drawing.Size(100, 22);
+            this.ActivityPriceTextBox.Size = new System.Drawing.Size(236, 22);
             this.ActivityPriceTextBox.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(24, 144);
+            this.label4.Location = new System.Drawing.Point(24, 149);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 18);
             this.label4.TabIndex = 5;
@@ -102,7 +104,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 189);
+            this.button1.Location = new System.Drawing.Point(139, 229);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 47);
             this.button1.TabIndex = 7;
@@ -112,18 +114,37 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(27, 189);
+            this.button2.Location = new System.Drawing.Point(27, 229);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 47);
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(139, 185);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(236, 22);
+            this.textBox1.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 18);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Class";
+            // 
             // AddActivity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 250);
+            this.ClientSize = new System.Drawing.Size(387, 283);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ActivityPriceTextBox);
@@ -151,5 +172,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

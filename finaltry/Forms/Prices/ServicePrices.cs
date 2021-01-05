@@ -15,12 +15,12 @@ namespace finaltry.Forms.Prices
         public ServicePrices()
         {
             InitializeComponent();
-            showdata();
+            showdata("");
         }
 
 
 
-        public void showdata()
+        public void showdata(string filter)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
             string query;
@@ -28,7 +28,7 @@ namespace finaltry.Forms.Prices
             SqlDataAdapter sda;
             DataTable table = new DataTable();
 
-            query = "SELECT * From Prices";
+            query = "SELECT * From Prices WHERE ProductName Like '%" + filter +"%'";
             command = new SqlCommand(query, connection);
             sda = new SqlDataAdapter(command);
             sda.Fill(table);
@@ -49,7 +49,7 @@ namespace finaltry.Forms.Prices
             serviceprice = Convert.ToString(senderGrid.Rows[e.RowIndex].Cells[3].Value);
             EditService editService = new EditService();
             editService.ShowDialog();
-            showdata();
+            showdata("");
 
 
 
@@ -59,14 +59,19 @@ namespace finaltry.Forms.Prices
         {
             AddService addService = new AddService();
             addService.ShowDialog();
-            showdata();
+            showdata("");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             RemoveService removeService = new RemoveService();
             removeService.ShowDialog();
-            showdata();
+            showdata("");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            showdata(textBox1.Text);
         }
     }
 }

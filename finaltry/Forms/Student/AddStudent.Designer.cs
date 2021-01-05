@@ -35,10 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.greenRadioButton = new System.Windows.Forms.RadioButton();
-            this.purpleRadioButton = new System.Windows.Forms.RadioButton();
-            this.preSchoolRadioButton = new System.Windows.Forms.RadioButton();
-            this.blueRadioButton = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
@@ -47,7 +43,6 @@
             this.lyesRadioButton = new System.Windows.Forms.RadioButton();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SubmitButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.byesRadioButton = new System.Windows.Forms.RadioButton();
@@ -69,7 +64,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.discountTextBox = new System.Windows.Forms.TextBox();
             this.MonthlyPlanTextBox = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TodayTextBox = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -99,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 77);
+            this.label2.Location = new System.Drawing.Point(12, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 24);
             this.label2.TabIndex = 3;
@@ -108,7 +110,7 @@
             // ParentNameTextBox
             // 
             this.ParentNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ParentNameTextBox.Location = new System.Drawing.Point(248, 77);
+            this.ParentNameTextBox.Location = new System.Drawing.Point(247, 113);
             this.ParentNameTextBox.MaxLength = 40;
             this.ParentNameTextBox.Name = "ParentNameTextBox";
             this.ParentNameTextBox.Size = new System.Drawing.Size(250, 28);
@@ -118,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 118);
+            this.label3.Location = new System.Drawing.Point(12, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(140, 24);
             this.label3.TabIndex = 5;
@@ -127,7 +129,7 @@
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(247, 118);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(247, 186);
             this.PhoneNumberTextBox.MaxLength = 10;
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(250, 28);
@@ -137,69 +139,17 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 197);
+            this.label4.Location = new System.Drawing.Point(9, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 24);
             this.label4.TabIndex = 8;
             this.label4.Text = "Class";
             // 
-            // greenRadioButton
-            // 
-            this.greenRadioButton.AutoSize = true;
-            this.greenRadioButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.greenRadioButton.Location = new System.Drawing.Point(226, 0);
-            this.greenRadioButton.Name = "greenRadioButton";
-            this.greenRadioButton.Size = new System.Drawing.Size(69, 35);
-            this.greenRadioButton.TabIndex = 9;
-            this.greenRadioButton.TabStop = true;
-            this.greenRadioButton.Text = "Green";
-            this.greenRadioButton.UseVisualStyleBackColor = true;
-            this.greenRadioButton.CheckedChanged += new System.EventHandler(this.greenRadioButton_CheckedChanged);
-            // 
-            // purpleRadioButton
-            // 
-            this.purpleRadioButton.AutoSize = true;
-            this.purpleRadioButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.purpleRadioButton.Location = new System.Drawing.Point(156, 0);
-            this.purpleRadioButton.Name = "purpleRadioButton";
-            this.purpleRadioButton.Size = new System.Drawing.Size(70, 35);
-            this.purpleRadioButton.TabIndex = 10;
-            this.purpleRadioButton.TabStop = true;
-            this.purpleRadioButton.Text = "Purple";
-            this.purpleRadioButton.UseVisualStyleBackColor = true;
-            this.purpleRadioButton.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // preSchoolRadioButton
-            // 
-            this.preSchoolRadioButton.AutoSize = true;
-            this.preSchoolRadioButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.preSchoolRadioButton.Location = new System.Drawing.Point(0, 0);
-            this.preSchoolRadioButton.Name = "preSchoolRadioButton";
-            this.preSchoolRadioButton.Size = new System.Drawing.Size(99, 35);
-            this.preSchoolRadioButton.TabIndex = 12;
-            this.preSchoolRadioButton.TabStop = true;
-            this.preSchoolRadioButton.Text = "Pre-School";
-            this.preSchoolRadioButton.UseVisualStyleBackColor = true;
-            this.preSchoolRadioButton.CheckedChanged += new System.EventHandler(this.preSchoolRadioButton_CheckedChanged);
-            // 
-            // blueRadioButton
-            // 
-            this.blueRadioButton.AutoSize = true;
-            this.blueRadioButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.blueRadioButton.Location = new System.Drawing.Point(99, 0);
-            this.blueRadioButton.Name = "blueRadioButton";
-            this.blueRadioButton.Size = new System.Drawing.Size(57, 35);
-            this.blueRadioButton.TabIndex = 11;
-            this.blueRadioButton.TabStop = true;
-            this.blueRadioButton.Text = "Blue";
-            this.blueRadioButton.UseVisualStyleBackColor = true;
-            this.blueRadioButton.CheckedChanged += new System.EventHandler(this.blueRadioButton_CheckedChanged);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 234);
+            this.label5.Location = new System.Drawing.Point(10, 302);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 24);
             this.label5.TabIndex = 13;
@@ -209,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 270);
+            this.label6.Location = new System.Drawing.Point(10, 338);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 24);
             this.label6.TabIndex = 14;
@@ -217,7 +167,7 @@
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Location = new System.Drawing.Point(22, 316);
+            this.AddressTextBox.Location = new System.Drawing.Point(12, 391);
             this.AddressTextBox.Multiline = true;
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(482, 147);
@@ -226,7 +176,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(23, 296);
+            this.label7.Location = new System.Drawing.Point(13, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(164, 17);
             this.label7.TabIndex = 16;
@@ -260,7 +210,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(704, 483);
+            this.CancelButton.Location = new System.Drawing.Point(391, 563);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(154, 42);
             this.CancelButton.TabIndex = 21;
@@ -271,7 +221,7 @@
             // SubmitButton
             // 
             this.SubmitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubmitButton.Location = new System.Drawing.Point(960, 483);
+            this.SubmitButton.Location = new System.Drawing.Point(647, 563);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(154, 42);
             this.SubmitButton.TabIndex = 22;
@@ -279,22 +229,11 @@
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.greenRadioButton);
-            this.panel1.Controls.Add(this.purpleRadioButton);
-            this.panel1.Controls.Add(this.blueRadioButton);
-            this.panel1.Controls.Add(this.preSchoolRadioButton);
-            this.panel1.Location = new System.Drawing.Point(124, 197);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(327, 35);
-            this.panel1.TabIndex = 23;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lyesRadioButton);
             this.panel2.Controls.Add(this.lnoRadioButton);
-            this.panel2.Location = new System.Drawing.Point(124, 229);
+            this.panel2.Location = new System.Drawing.Point(115, 297);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(124, 29);
             this.panel2.TabIndex = 24;
@@ -303,7 +242,7 @@
             // 
             this.panel3.Controls.Add(this.byesRadioButton);
             this.panel3.Controls.Add(this.bnoRadioButton);
-            this.panel3.Location = new System.Drawing.Point(125, 264);
+            this.panel3.Location = new System.Drawing.Point(116, 332);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(124, 29);
             this.panel3.TabIndex = 25;
@@ -369,7 +308,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(577, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(577, 263);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -387,7 +326,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(812, 314);
+            this.label10.Location = new System.Drawing.Point(812, 333);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(144, 24);
             this.label10.TabIndex = 32;
@@ -399,9 +338,9 @@
             this.ActivityName,
             this.Price});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(592, 347);
+            this.listView1.Location = new System.Drawing.Point(592, 391);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(577, 116);
+            this.listView1.Size = new System.Drawing.Size(577, 147);
             this.listView1.TabIndex = 33;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -430,7 +369,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(12, 152);
+            this.label11.Location = new System.Drawing.Point(12, 220);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 24);
             this.label11.TabIndex = 36;
@@ -439,7 +378,7 @@
             // EmailTextBox
             // 
             this.EmailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTextBox.Location = new System.Drawing.Point(247, 152);
+            this.EmailTextBox.Location = new System.Drawing.Point(247, 220);
             this.EmailTextBox.MaxLength = 40;
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(250, 28);
@@ -450,7 +389,7 @@
             this.ParentExists.AutoSize = true;
             this.ParentExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ParentExists.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.ParentExists.Location = new System.Drawing.Point(14, 101);
+            this.ParentExists.Location = new System.Drawing.Point(13, 137);
             this.ParentExists.Name = "ParentExists";
             this.ParentExists.Size = new System.Drawing.Size(115, 15);
             this.ParentExists.TabIndex = 37;
@@ -462,7 +401,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(14, 482);
+            this.label12.Location = new System.Drawing.Point(4, 557);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(128, 20);
             this.label12.TabIndex = 38;
@@ -472,7 +411,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(19, 510);
+            this.label13.Location = new System.Drawing.Point(9, 585);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 20);
             this.label13.TabIndex = 39;
@@ -480,23 +419,103 @@
             // 
             // discountTextBox
             // 
-            this.discountTextBox.Location = new System.Drawing.Point(148, 482);
+            this.discountTextBox.Location = new System.Drawing.Point(138, 557);
             this.discountTextBox.Name = "discountTextBox";
             this.discountTextBox.Size = new System.Drawing.Size(100, 22);
             this.discountTextBox.TabIndex = 40;
             // 
             // MonthlyPlanTextBox
             // 
-            this.MonthlyPlanTextBox.Location = new System.Drawing.Point(148, 510);
+            this.MonthlyPlanTextBox.Location = new System.Drawing.Point(138, 585);
             this.MonthlyPlanTextBox.Name = "MonthlyPlanTextBox";
             this.MonthlyPlanTextBox.Size = new System.Drawing.Size(100, 22);
             this.MonthlyPlanTextBox.TabIndex = 41;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(148, 84);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(0, 17);
+            this.linkLabel2.TabIndex = 44;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 79);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(156, 24);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Student Surname";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(247, 79);
+            this.textBox1.MaxLength = 40;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(254, 28);
+            this.textBox1.TabIndex = 42;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(13, 152);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(146, 24);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Parent Surname";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(248, 152);
+            this.textBox2.MaxLength = 40;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(250, 28);
+            this.textBox2.TabIndex = 45;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(275, 266);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 23);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "View Class List";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(115, 265);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(138, 22);
+            this.textBox3.TabIndex = 48;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // TodayTextBox
+            // 
+            this.TodayTextBox.AutoSize = true;
+            this.TodayTextBox.Location = new System.Drawing.Point(892, 563);
+            this.TodayTextBox.Name = "TodayTextBox";
+            this.TodayTextBox.Size = new System.Drawing.Size(0, 17);
+            this.TodayTextBox.TabIndex = 49;
             // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 537);
+            this.ClientSize = new System.Drawing.Size(1182, 627);
+            this.Controls.Add(this.TodayTextBox);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.MonthlyPlanTextBox);
             this.Controls.Add(this.discountTextBox);
             this.Controls.Add(this.label13);
@@ -513,7 +532,6 @@
             this.Controls.Add(this.StudentIDTextBox);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.SubmitButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.label7);
@@ -531,8 +549,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add A New Student";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -553,10 +569,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox PhoneNumberTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton greenRadioButton;
-        private System.Windows.Forms.RadioButton purpleRadioButton;
-        private System.Windows.Forms.RadioButton preSchoolRadioButton;
-        private System.Windows.Forms.RadioButton blueRadioButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox AddressTextBox;
@@ -565,7 +577,6 @@
         private System.Windows.Forms.RadioButton lyesRadioButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button SubmitButton;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton byesRadioButton;
@@ -587,5 +598,13 @@
         private System.Windows.Forms.TextBox discountTextBox;
         private System.Windows.Forms.TextBox MonthlyPlanTextBox;
         private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label TodayTextBox;
     }
 }

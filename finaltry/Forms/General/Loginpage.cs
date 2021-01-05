@@ -14,6 +14,7 @@ namespace finaltry
 {
     public partial class Login : Form
     {
+        public static string username;
         public Login()
         {
             InitializeComponent();
@@ -43,6 +44,7 @@ namespace finaltry
             sda.Fill(dtbl);
             if(dtbl.Rows.Count == 1)
             {
+                username = Convert.ToString(dtbl.Rows[0].ItemArray[1]);
                 MainForm objMain = new MainForm();
                 this.Hide();
                 objMain.Show();

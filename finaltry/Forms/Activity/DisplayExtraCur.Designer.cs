@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.StudentList = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.StudentList = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.activitynamebox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -50,9 +50,18 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(455, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(483, 379);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // StudentList
+            // 
+            this.StudentList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.StudentList.HeaderText = "StudentList";
+            this.StudentList.MinimumWidth = 6;
+            this.StudentList.Name = "StudentList";
+            this.StudentList.Text = "StudentList";
+            this.StudentList.Width = 85;
             // 
             // SearchTextBox
             // 
@@ -93,15 +102,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // StudentList
-            // 
-            this.StudentList.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.StudentList.HeaderText = "StudentList";
-            this.StudentList.MinimumWidth = 6;
-            this.StudentList.Name = "StudentList";
-            this.StudentList.Text = "StudentList";
-            this.StudentList.Width = 85;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(508, 536);
+            this.ClientSize = new System.Drawing.Size(558, 536);
             this.Controls.Add(this.activitynamebox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);

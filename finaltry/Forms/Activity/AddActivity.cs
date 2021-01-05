@@ -16,6 +16,7 @@ namespace finaltry.Forms
         public AddActivity()
         {
             InitializeComponent();
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -24,7 +25,8 @@ namespace finaltry.Forms
             {
                 SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tarik\source\repos\finaltry\loginDB.mdf;Integrated Security=True;Connect Timeout=30");
                 connection.Open();
-                string query = "INSERT INTO ActivitiesTable (ExtraCurID, ActivityName, Price) VALUES ('" + ActivityIDTextBox.Text + "','" + ActivityNameTextBox.Text + "','" + Convert.ToInt32(ActivityPriceTextBox.Text) + "')";
+           
+                string query = "INSERT INTO ActivitiesTable (ExtraCurID, ActivityName, Price, Class) VALUES ('" + ActivityIDTextBox.Text + "','" + ActivityNameTextBox.Text + "','" + Convert.ToInt32(ActivityPriceTextBox.Text) + "','" + textBox1.Text +"')";
                 SqlDataAdapter sda = new SqlDataAdapter(query, connection);
                 sda.SelectCommand.ExecuteNonQuery();
                 connection.Close();

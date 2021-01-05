@@ -1,5 +1,6 @@
 ﻿using finaltry.Classes;
 using finaltry.Forms;
+using finaltry.Forms.Finance;
 using finaltry.Forms.Prices;
 using System;
 using System.Collections.Generic;
@@ -159,6 +160,30 @@ namespace finaltry
         {
             Members members = new Members();
             members.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddMember addMember = new AddMember();
+            addMember.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            RemoveMember removeMember = new RemoveMember();
+            removeMember.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            PaymentPage paymentPage = new PaymentPage();
+            paymentPage.ShowDialog();
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            InvoiceList invoiceList = new InvoiceList();
+            invoiceList.ShowDialog();
         }
     }
 }
